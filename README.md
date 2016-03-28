@@ -15,6 +15,17 @@ This vagrant harness allows you to rapidly test your IdP-Installer build from yo
 ```
 export IDPInstallerBase=/Users/yourname/Documents/idp-installer-CAF
 ```
+:exclamation:
+```
+If you do not have the export above, you will see an error like this on vagrant up:
+Bringing machine 'default' up with 'virtualbox' provider...
+/opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:621:in `initialize': no implicit conversion of nil into String (TypeError)
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:621:in `new'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:621:in `block in validate'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:616:in `each'
+. . snip . .
+```
+ 
 1. You have created an IdP-Installer 'config' file per the instructions and placed it in the above folder
 1. You have reviewed the Vagrantfile for the appropriate remapped ports to know what to invoke for testing
 
