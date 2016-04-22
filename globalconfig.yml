@@ -1,0 +1,4 @@
+myglobals:
+    IDPInstallerGITRepo: idp-installer-CAF
+    IDPInstallerBase:	/idp/work/idp-installer-CAF
+    
