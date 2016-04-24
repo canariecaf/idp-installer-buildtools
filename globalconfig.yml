@@ -1,4 +1,5 @@
 myglobals:
     IDPInstallerGITRepo: idp-installer-CAF
     IDPInstallerBase:	/idp/work/idp-installer-CAF
-    
+    IDPInstallerGITOwner: canariecaf
+    IDPInstallerGITBranch: 3.0.0-CAF-RC6

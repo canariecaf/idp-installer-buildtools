@@ -1,35 +1,42 @@
-# Setup
+#  A Full Test Environment
 
-This vagrant harness allows you to rapidly test your IdP-Installer build from your host machine with a centos/7 guest host.
+This managed install allows you to rapidly deploy a fully functional Shibboleth IdP that has it's own local LDAP server for user accounts and test SP to experiment with based on Debian vagrant guest OS'.
 
-## Onetime Setup steps
+A Shibboleth v3 IdP is installed using the latest stable CAF IdP-Installer for more precise configuration of the IdP.
 
+Installation consists of:
+A local private network for 3 hosts on 172.16.80.2, .3, and .4
+Automatic updates to your /etc/hosts for these
+
+ldap.example.com (172.16.80.2) - LDAP server using openLDAP port 389,636
+sp.example.com (172.16.80.3)   - Apache2 port 80,443 with mod_shib
+idp.example.com (172.16.80.4)  - Shibboleth IdP v3, port 443 and connects to LDAP over port 636
+
+Once the software tools and setup process has been done, open this in your browser:
+
+https://sp.example.com/secureall
+
+The example  users / password: 
+	alice / wonderland
+	bob / wonderland 
+
+# Getting Started
+## Required Software Tools
+
+Common to Mac and Windows:
 1. Install Vagrant: https://www.vagrantup.com/downloads.html
 1. Install VirtualBox: https://www.virtualbox.org/
+1. Install Git client: https://desktop.github.com/
 
-## Preconditions
+Windows Specific:
+1. Install cygwin: https://cygwin.com
 
-1. You have done a download or git clone of the IdP Installer
-1. You have set an environment variable for the 'share' into the VM:
-
-```
-export IDPInstallerBase=/Users/yourname/Documents/idp-installer-CAF
-```
-:exclamation:
-```
-If you do not have the export above, you will see an error like this on vagrant up:
-Bringing machine 'default' up with 'virtualbox' provider...
-/opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:621:in `initialize': no implicit conversion of nil into String (TypeError)
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:621:in `new'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:621:in `block in validate'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.1/plugins/kernel_v2/config/vm.rb:616:in `each'
-. . snip . .
-```
- 
-1. You have created an IdP-Installer 'config' file per the instructions and placed it in the above folder
-1. You have reviewed the Vagrantfile for the appropriate remapped ports to know what to invoke for testing
 
 ## Launching the image
+1. git clone this repository to your machine:
+```
+git clone 
+
 1. OPTIONAL: if you want to capture the output of everything to review at a later time, use the script command (unix/mac):
 ```
 script run.txt

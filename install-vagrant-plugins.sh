@@ -5,8 +5,8 @@ set -u
 
 PLAT=`uname`
 
-echo "\nOne moment checking for plugins on your OS (${PLAT})"
-echo "Checking for vagrant-hostmanager to manage /etc/hosts manipulation when hosts come up/down"
+echo -e "\nOne moment checking for plugins on your OS (${PLAT})"
+echo -e "Checking for vagrant-hostmanager to manage /etc/hosts manipulation when hosts come up/down"
 vagrant plugin list | grep vagrant-hostmanager 2>&1 >/dev/null
 if [ $? -eq 1 ]; then
 
@@ -15,7 +15,7 @@ if [ $? -eq 1 ]; then
 
   case `uname` in
     Darwin)
-      echo "Updating the /etc/sudoers file"
+      echo -e "Updating the /etc/sudoers file"
       sudo tee -a /etc/sudoers <<EOF
 Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp $HOME/.vagrant.d/tmp/hosts.local /etc/hosts
 %admin ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE
@@ -37,13 +37,13 @@ EOF
  
 fi
   
-echo "checking for vagrant-vbguest"
+echo -e "checking for vagrant-vbguest"
 vagrant plugin list | grep vagrant-vbguest 2>&1 >/dev/null
 if [ $? -eq 1 ]; then
   vagrant plugin install vagrant-vbguest
 fi
 
-echo "\n"
-echo "Installed Plugins:"
+echo -e ""
+echo -e "Installed Plugins:"
 vagrant plugin list
-echo ""
+echo -e ""
