@@ -42,7 +42,8 @@ Windows Specific:
 :exclamation:
 
 ``` 
-Note that in the default cygwin installation does not install certain packages by default. Please make sure these are available (use search for each to find them):
+Note that in the default cygwin installation does not install certain packages by default. 
+Please make sure these are available (use search for each to find them):
  
 - git - git client 
 - curl - http client
@@ -51,35 +52,41 @@ Note that in the default cygwin installation does not install certain packages b
 
 # Getting Started
 
-## Launching the image
+## Fetch this repository
 1. Git clone this repository to your machine:
 ```
 git clone https://github.com/canariecaf/idp-installer-buildtools
 ```
 
-1. Prepare the environment 
+1. Preparing the environment 
+
 **RUN ONCE PER HOST:** 
 
 Execute script to install vagrant hostmanager plugin which also modifies the `sudoers` file of your host to grant vagrant/hostmanager access to dynamically manipulate the `hosts` file on your host.
 
+```
     $ ./install-vagrant-plugins.sh
+````
 
  **RUN ONCE PER CLEAN PROJECT:** 
 
 Execute bootstrap script to stage sources needed in the SP and IdP build.
 
-
+```
     $ ./bootstrap.sh
+```
 
-**Then**
+1. Performing the Provisioning step
 
-Run script to provision all machines.
+Run script to provision all machines - ldap, sp, idp, in that order.
 
+```
     $ ./provision.sh
-
+```
 
 
 1. verify the installation completed by checking the idp status page:
+
 ```
 https://idp.example.com/idp/status
 ```
