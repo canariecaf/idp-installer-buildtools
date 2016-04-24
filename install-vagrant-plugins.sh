@@ -6,11 +6,10 @@ set -u
 PLAT=`uname`
 
 echo -e "\nOne moment checking for plugins on your OS (${PLAT})"
-echo -e "Checking for vagrant-hostmanager to manage /etc/hosts manipulation when hosts come up/down"
-vagrant plugin list | grep vagrant-hostmanager 2>&1 >/dev/null
-if [ $? -eq 1 ]; then
+echo -e "Forcing plugin installation for vagrant-hostmanager and vagrant-vbguest"
+vagrant plugin install vagrant-hostmanager
+vagrant plugin install vagrant-vbguest
 
-  vagrant plugin install vagrant-hostmanager
 
 
   case `uname` in
@@ -31,17 +30,13 @@ Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp $HOME/.vagrant.d/tmp/hosts.local
 EOF
       ;;
     CYGWIN*)
-      sudo apt-get install -y unzip curl
+
+echo "on Windows - ensure you have git, curl, and unzip installed"
       ;;
   esac
  
-fi
+
   
-echo -e "checking for vagrant-vbguest"
-vagrant plugin list | grep vagrant-vbguest 2>&1 >/dev/null
-if [ $? -eq 1 ]; then
-  vagrant plugin install vagrant-vbguest
-fi
 
 echo -e ""
 echo -e "Installed Plugins:"
