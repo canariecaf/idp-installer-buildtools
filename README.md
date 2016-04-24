@@ -53,12 +53,12 @@ Please make sure these are available (use search for each to find them):
 # Getting Started
 
 ## Fetch this repository
-1. Git clone this repository to your machine:
+Git clone this repository to your machine:
 ```
 git clone https://github.com/canariecaf/idp-installer-buildtools
 ```
 
-1. Preparing the environment 
+## Preparing Your Environment 
 
 **RUN ONCE PER HOST:** 
 
@@ -76,7 +76,7 @@ Execute bootstrap script to stage sources needed in the SP and IdP build.
     $ ./bootstrap.sh
 ```
 
-1. Performing the Provisioning step
+## Performing the Provisioning step
 
 Run script to provision all machines - ldap, sp, idp, in that order.
 
@@ -84,8 +84,8 @@ Run script to provision all machines - ldap, sp, idp, in that order.
     $ ./provision.sh
 ```
 
-
-1. verify the installation completed by checking the idp status page:
+## Verify the installation completed 
+You can verify things by checking the idp status page here in your browser. Accept the self signed certificate for these hosts.
 
 ```
 https://idp.example.com/idp/status
