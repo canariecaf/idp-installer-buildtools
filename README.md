@@ -41,12 +41,14 @@ Windows Specific:
 
 :exclamation:
 
-``` Note that in the default cygwin installation does not install certain packages by default. Please make sure these are available (use search for each to find them):
+``` 
+Note that in the default cygwin installation does not install certain packages by default. Please make sure these are available (use search for each to find them):
  
 - git - git client 
 - curl - http client
 - unzip - client to unzip items
 ```
+
 # Getting Started
 
 ## Launching the image
