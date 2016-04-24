@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 set -x
-
 set -e 
 set -u 
 
@@ -12,7 +10,7 @@ mkdir -p work
 cd work
 GITOWNER="canariecaf"
 GITREPO="idp-installer-CAF"
-GITBRANCH="cpdev-develop-Shibv3Support"
+GITBRANCH="3.0.0-CAF-RC6"
 GITROOT="https://github.com/${GITOWNER}/${GITREPO}"
 
 CFGTEMPLATE="${r}/config.template"
