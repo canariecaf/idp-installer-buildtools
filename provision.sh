@@ -19,7 +19,7 @@ echo ""
 IDPInstallerGITRepo="idp-installer-CAF"
 export IDPInstallerBase="${PWD}/idp/work/idp-installer-CAF"
 
-local PROVMSG="provisioning relevant services to it"
+PROVMSG="provisioning relevant services to it"
 
 echo "Setting IDPInsallerBase variable to: ${IDPInstallerBase}"
 
