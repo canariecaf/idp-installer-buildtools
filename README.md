@@ -1,6 +1,6 @@
 #  Buildtool: An IdP-Installer Shibboleth v3 Test Environment
 
-Using the latest [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional Shibboleth IdP connecting to it's own local LDAP server and also installs a test SP.
+Using the latest [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional self contained Shibboleth IdP connecting to it's own local LDAP server and also installs a test SP.
 
 Installation consists of:
 - A local private network 172.16.80.0/24 for our hosts
@@ -38,12 +38,14 @@ Common to Mac and Windows:
 Windows Specific:
 
 1. Install cygwin: https://cygwin.com
+
 :exclamation:
-``Note that in the default cygwin installation git client is NOT selected.
 
-It is located under 'Devel' portion of the tree -- using the cygwin installer, search for 'git' and ensure you have those packages and dependancies in place.
-
-If you don't, you will have to do all git related tasks via the git GUI client.
+`` Note that in the default cygwin installation does not install certain packages by default. Please make sure these are available (use search for each to find them):
+ 
+- git - git client 
+- curl - http client
+- unzip - client to unzip items
 ``
 # Getting Started
 
