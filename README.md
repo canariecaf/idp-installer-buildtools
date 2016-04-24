@@ -1,6 +1,6 @@
-#  Self Contained Shibboleth v3 Test Environment
+#  Buildtool: An IdP-Installer Shibboleth v3 Test Environment
 
-Using the latest @canariecaf [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional Shibboleth IdP connecting to it's own local LDAP server along with a test SP.
+Using the latest [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional Shibboleth IdP connecting to it's own local LDAP server along with a test SP.
 
 Installation consists of:
 A local private network for 3 hosts on 172.16.80.2, .3, and .4
