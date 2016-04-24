@@ -3,16 +3,16 @@
 Using the latest [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional Shibboleth IdP connecting to it's own local LDAP server along with a test SP.
 
 Installation consists of:
-A local private network for 3 hosts on 172.16.80.2, .3, and .4
-Automatic updates to your /etc/hosts for these
 
-ldap.example.com (172.16.80.2) - LDAP server using openLDAP port 389,636
-sp.example.com (172.16.80.3)   - Apache2 port 80,443 with mod_shib
-idp.example.com (172.16.80.4)  - Shibboleth IdP v3, port 443 and connects to LDAP over port 636
+- A local private network for 3 hosts on 172.16.80.0/24 private network
+- Automatic updates to your /etc/hosts for:
+  - ldap.example.com (172.16.80.2) - LDAP server using openLDAP port 389,636
+  - sp.example.com (172.16.80.3)   - Apache2 port 80,443 with mod_shib
+  - idp.example.com (172.16.80.4)  - Shibboleth IdP v3, port 443 and connects to LDAP over port 636
 
 Once the software tools and setup process has been done, open this in your browser:
 
-https://sp.example.com/secureall
+https://sp.example.com/secure-all
 
 The example  users / password: 
 	alice / wonderland
