@@ -39,7 +39,8 @@ Common to Mac and Linux:
 Windows Specific:
 :exclamation:
 
-``` Windows support is incomplete at this time.
+``` 
+Windows support is incomplete at this time.
 The windows host needs to be able to do a few things properly from the commandline which it does not at this time.
 
 We are working on this and strongly desire a cygwin+vagrant+virtualbox solution.
