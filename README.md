@@ -19,9 +19,10 @@ Example users / passwords to use:
 
 ## How this works
 There are three main steps:
+
 1. Prepare you host system (mac/pc/linux) to have the right Vagrant components.
-2. Bootstrap some preliminary config for said components.
-3. Provision the machines.
+1. Bootstrap some preliminary config for said components.
+1. Provision the machines.
 
 Once machines are provisioned you can tweak things by ssh'ing into them (vagrant ssh [ldap|idp|sp]) or even manually destroying and reprovisioning one. The script ``provision.sh`` does this work if you would like to peek under the hood.
 
