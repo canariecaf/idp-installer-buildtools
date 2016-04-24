@@ -1,8 +1,6 @@
-#  A Full Test Environment
+#  Self Contained Shibboleth v3 Test Environment
 
-This managed install allows you to rapidly deploy a fully functional Shibboleth IdP that has it's own local LDAP server for user accounts and test SP to experiment with based on Debian vagrant guest OS'.
-
-A Shibboleth v3 IdP is installed using the latest stable CAF IdP-Installer for more precise configuration of the IdP.
+Using the latest @canariecaf [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional Shibboleth IdP connecting to it's own local LDAP server along with a test SP.
 
 Installation consists of:
 A local private network for 3 hosts on 172.16.80.2, .3, and .4
