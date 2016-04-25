@@ -34,7 +34,7 @@ fqinstallerpath = "#{current_dir}#{mybase}"
  config.vm.define "ldap" do |config|
     config.vm.hostname = "ldap.example.com"
     config.vm.network "private_network", ip: "172.16.80.2"
-    config.vm.synced_folder "#{fqinstallerpath}" , "/vagrant"
+    config.vm.synced_folder "#{current_dir}" , "/vagrant"
     config.vm.provision "install",   type: "shell", path: "ldap/install.sh"
 #    config.vm.provision "debug",     type: "shell", path: "ldap/debug.sh"
  end
@@ -43,7 +43,7 @@ fqinstallerpath = "#{current_dir}#{mybase}"
 config.vm.define "sp" do |config|
     config.vm.hostname = "sp.example.com"
     config.vm.network "private_network", ip: "172.16.80.3"
-    config.vm.synced_folder "#{fqinstallerpath}" , "/vagrant"
+    config.vm.synced_folder "#{current_dir}" , "/vagrant"
 
  #   config.vm.provision "dev",           type: "shell", path: "sp/dev.sh"
     config.vm.provision "install",       type: "shell", path: "sp/install.sh"
