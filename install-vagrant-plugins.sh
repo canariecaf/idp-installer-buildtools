@@ -6,12 +6,32 @@ set -u
 PLAT=`uname`
 
 echo -e "\nOne moment checking for plugins on your OS (${PLAT})"
+
 echo -e "Forcing plugin installation for vagrant-hostmanager and vagrant-vbguest"
+
 vagrant plugin install vagrant-hostmanager
 vagrant plugin install vagrant-vbguest
 
+echo -e ""
+echo -e "Installed Plugins:"
+vagrant plugin list
+echo -e ""
 
 
+echo -e "Next we need to read the /etc/sudoers file as root to check if we have applied our updates"
+echo -e "If we have, we will skip updates, if not we will apply sudo settings to update /etc/hosts"
+
+PREVRUNTEST=`sudo cat /etc/sudoers |grep VAGRANT_HOSTMANAGER_UPDATE|wc -l`
+
+
+if [ ${PREVRUNTEST} -gt 0 ]; then
+
+  echo "We detected a previous update, skipping editting the /etc/sudoers file"
+
+else
+
+echo "Beginning to edit the /etc/sudoers file"
+  
   case `uname` in
     Darwin)
       echo -e "Updating the /etc/sudoers file"
@@ -31,14 +51,11 @@ EOF
       ;;
     CYGWIN*)
 
-echo "on Windows - ensure you have git, curl, and unzip installed"
+echo "on Windows - No edits performed. Ensure you have git, curl, and unzip installed"
       ;;
   esac
  
 
+fi
+echo -e "install-vagrant-plugins.sh run complete"
   
-
-echo -e ""
-echo -e "Installed Plugins:"
-vagrant plugin list
-echo -e ""
