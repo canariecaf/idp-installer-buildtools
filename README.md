@@ -30,20 +30,23 @@ Once machines are provisioned you can tweak things by ssh'ing into them (vagrant
 # Preparing your system
 ## Required Software Tools
 
-Common to Mac and Windows:
+Common to Mac and Linux:
 
 1. Install Vagrant: https://www.vagrantup.com/downloads.html
 1. Install VirtualBox: https://www.virtualbox.org/
 1. Install Git client: https://desktop.github.com/
 
 Windows Specific:
-
-1. Install cygwin: https://cygwin.com
-
 :exclamation:
 
 ``` 
-Note that in the default cygwin installation does not install certain packages by default. 
+Windows support is incomplete at this time.
+The windows host needs to be able to do a few things properly from the commandline which it does not at this time.
+
+We are working on this and strongly desire a cygwin+vagrant+virtualbox solution.
+Issues are with proper vagrant communication from windows host to guest system at this time.
+
+The default cygwin installation does not install certain packages by default and is under investigation.
 Please make sure these are available (use search for each to find them):
  
 - git - git client 
