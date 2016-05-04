@@ -3,7 +3,7 @@ set -e
 set -u 
 
 apt-get update
-apt-get install -y dbus ntpdate
+apt-get install -y dbus ntpdate dnsutils
 MYTZ="America/Toronto"
 echo "Setting time zome to ${MYTZ}"
 echo "${MYTZ}" > /etc/timezone
