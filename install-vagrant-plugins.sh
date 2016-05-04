@@ -65,6 +65,5 @@ echo "Windows using GIT bash - No edits performed."
       ;;
   esac
  
-fi
 echo -e "install-vagrant-plugins.sh run complete"
   
