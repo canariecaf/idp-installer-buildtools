@@ -50,7 +50,7 @@ AF="${IDPROOT}/conf/attribute-filter.xml"
 	echo "Making backup before editting it"
 cp ${AF} ${AF}.orig
 	echo "Appending our release policy to the end of the attribute-filter.xml file"
-head -n -1 {$AF}.orig > ${AF}
+head -n -1 ${AF}.orig > ${AF}
 cat $r/attribute-filter-policy.xml.fragment >> ${AF}
 echo "</AttributeFilterPolicyGroup>" >> ${AF}
 
