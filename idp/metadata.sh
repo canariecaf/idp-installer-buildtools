@@ -2,6 +2,7 @@
 set -u 
 set -e 
 
+
 r=/vagrant/idp
 
 IDPROOT="/opt/shibboleth-idp"

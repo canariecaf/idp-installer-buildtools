@@ -1,5 +1,6 @@
 
 <!-- added by Vagrant build of the IdP -->
+
 <AttributeFilterPolicy id="CAF-IdPInstaller-buildtools-example">
     <PolicyRequirementRule xsi:type="Requester" value="https://sp.example.com/shibboleth" />
         
