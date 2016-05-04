@@ -48,7 +48,7 @@ config.vm.define "sp" do |config|
  #   config.vm.provision "dev",           type: "shell", path: "sp/dev.sh"
     config.vm.provision "install",       type: "shell", path: "sp/install.sh"
     config.vm.provision "config",        type: "shell", path: "sp/config.sh"
-   # config.vm.provision "eds",           type: "shell", path: "sp/eds.sh"
+   config.vm.provision "eds",           type: "shell", path: "sp/eds.sh"
     config.vm.provision "sso",           type: "shell", path: "sp/sso.sh",      args: "#{ENV['SSO']}"
 #    config.vm.provision "metadata-idp",  type: "shell", path: "sp/metadata.sh", args: "+ idp  https://idp.example.com/idp/shibboleth"
     config.vm.provision "metadata-idp", type: "shell", path: "sp/metadata.sh", args: "+ idp https://idp.example.com/idp/shibboleth"

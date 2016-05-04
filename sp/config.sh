@@ -20,6 +20,7 @@ mkdir -p /var/www/vhosts/sp.example.com
 echo -e "Setting placeholder index.html in /var/www/vhosts/sp.example.com"
 cp $r/index.html.template /var/www/vhosts/sp.example.com/index.html
 cp $r/logo.png /var/www/vhosts/sp.example.com/logo.png
+cp $r/topology.png /var/www/vhosts/sp.example.com/topology.png
 
 echo -e "Updating apache2 configuration"
 cp $r/apache.conf /etc/apache2/sites-available/sp.conf
