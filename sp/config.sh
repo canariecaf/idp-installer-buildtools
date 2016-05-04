@@ -4,7 +4,7 @@ set -e
 
 r=/vagrant/sp
 
-echo "Preparing SP keys"
+echo -e "Preparing SP keys"
 openssl req -batch -x509 -nodes -days 3650 -newkey rsa:2048 \
   -keyout /etc/ssl/private/sp.example.com.key \
      -out /etc/ssl/certs/sp.example.com.crt \
@@ -17,9 +17,19 @@ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
 
 mkdir -p /var/www/vhosts/sp.example.com
 
+echo -e "Setting placeholder index.html in /var/www/vhosts/sp.example.com"
+cp $r/index.html.template /var/www/vhosts/sp.example.com/index.html
+cp $r/logo.png /var/www/vhosts/sp.example.com/logo.png
+
+echo -e "Updating apache2 configuration"
 cp $r/apache.conf /etc/apache2/sites-available/sp.conf
 
+echo -e "Updating shibboleth SP configuration"
+
 cp /etc/shibboleth/shibboleth2.xml /etc/shibboleth/shibboleth2.xml.orig
+#cp $r/shibboleth2.xml /etc/shibboleth/shibboleth2.xml
+
+echo -e "ensuring example.com is properly shown"
 
 sed -i'' "s/example\.org/example\.com/" /etc/shibboleth/shibboleth2.xml
 
@@ -50,10 +60,14 @@ a2enmod ssl
 a2ensite sp
 a2enmod cgi
 
+
+cp $r/test.py /usr/lib/cgi-bin
+chmod +x /usr/lib/cgi-bin/test.py
+chown www-data /usr/lib/cgi-bin/test.py
+
 service shibd restart
 service apache2 reload
 
-cp $r/test.py /usr/lib/cgi-bin
 
 #cd $r/patches
 #patch /etc/shibboleth/shibboleth2.xml <session.patch
