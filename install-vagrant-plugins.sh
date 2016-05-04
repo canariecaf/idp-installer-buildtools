@@ -51,7 +51,11 @@ EOF
       ;;
     CYGWIN*)
 
-echo "on Windows - No edits performed. Ensure you have git, curl, and unzip installed"
+echo "on Windows using cygwin - No edits performed. Ensure you have git, curl, and unzip installed via setup"
+      ;;
+      MING*)
+
+echo "on Windows using GIT bash - No edits performed. Ensure you have git, curl, and unzip installed"
       ;;
   esac
  
