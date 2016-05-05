@@ -32,7 +32,7 @@ echo "Bringing up sp.example.com"
 	SSO="eds"
 	vagrant up sp  --no-provision
 	echo "${PROVMSG}"
-	vagrant provision sp --provision-with base,install,config
+	vagrant provision sp --provision-with base,install,config,eds
 	SSO=${SSO} vagrant provision sp --provision-with sso
 
 echo "Bringing up the IdP"
