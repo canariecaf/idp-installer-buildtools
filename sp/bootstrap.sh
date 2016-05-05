@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 r=$PWD
 . ./common
 echo "Working on SP boostrap steps"

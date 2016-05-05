@@ -10,7 +10,7 @@ BSWITCHES=""
 #BSWITCHES=" -x "
 
 echo "Performing installation and capturing output in /installer/run.txt "
-sudo  sudo -- bash -c 'cd /installer;script run.txt;  bash ${BSWITCHES} /installer/deploy_idp.sh;' 
+sudo  sudo -- bash -c 'cd /installer;bash ${BSWITCHES} /installer/deploy_idp.sh;' 
 
 
 echo "Installation done"
