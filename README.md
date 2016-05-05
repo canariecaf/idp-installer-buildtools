@@ -37,30 +37,26 @@ Common to Mac and Linux:
 1. Install Git client: https://desktop.github.com/
 
 Windows Specific:
-:exclamation: 
+:exclamation: Windows will work but you need to do three key things:
 
-``` 
-Windows will work but you need to do three key things:
-
-1. Make sure your BIOS on your machine supports virtualization on your 64 bit architecture.
-1. Ensure you set git to check things out unchanged for line endings.
-1. use git bash from windows (start menu -> type in 'git bash' and run everything from there)
-Optional:
-- The windows alerts that the scripts are changing things can be removed, just click learn more on the dialog when you next see it.
-
-Cygwin has been tried and **SHOULD** work but git-bash from the windows client is the only one I've tested end to end successfully.
-If you use Cygwin be sure to have these packages added when you install (you need to add them explicitly during install BTW)
-- git - git client 
-- curl - http client
-- unzip - client to unzip items
-```
+> 1. Make sure your BIOS on your machine supports virtualization on your 64 bit architecture.
+> 1. Ensure you set git to check things out unchanged for line endings.
+> 1. use git bash from windows (start menu -> type in 'git bash' and run everything from there)
+> Optional:
+>  - The windows alerts that the scripts are changing things can be removed, just click learn more on the dialog when you next see it.
+>
+>Cygwin has been tried and **SHOULD** work but git-bash from the windows client is the only one I've tested end to end successfully.
+>If you use Cygwin be sure to have these packages added when you install (you need to add them explicitly during install BTW)
+> - git - git client 
+> - curl - http client
+> - unzip - client to unzip items
 
 # Getting Started
 
 :exclamation: If on Windows, two extra pre-flight steps are required:
 
 1. Use git bash as your shell
-Since you installed git for windows, you need to go to the start menu and type 'git bash'
+  * Since you installed git for windows, you need to go to the start menu and type 'git bash'
 1. UPDATE git config to use NON WINDOWS line feed endings
 If you do not, the bash scripts will choke.
 have this setting in place before running *any* git commands:
