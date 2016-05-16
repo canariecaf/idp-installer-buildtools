@@ -59,7 +59,7 @@ config.vm.define "idp" do |config|
       config.vm.synced_folder "#{fqinstallerpath}" , "/installer"
       config.vm.provision "install",   type: "shell", path: "idp/provision.sh"
       config.vm.provision "metadata", type: "shell", path: "idp/metadata.sh"
-      vb.memory = 2200 
+     # vb.memory = 2200 
    end
 
 
