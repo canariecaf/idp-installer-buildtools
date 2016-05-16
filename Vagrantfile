@@ -18,25 +18,22 @@ fqinstallerpath = "#{current_dir}#{mybase}"
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = false
   
+
 #  config.vm.box = "centos/7"
   config.vm.box = "kaorimatz/debian-8.3-amd64"
   config.vm.provision "base",    type: "shell", path: "common/base.sh"
 
- config.vm.provider :virtualbox do |vb|
-    # suggested fix for slow network performance
-    # see https://github.com/mitchellh/vagrant/issues/1807
 
-#    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-#    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-  
-  end
-
+ 
  config.vm.define "ldap" do |config|
     config.vm.hostname = "ldap.example.com"
     config.vm.network "private_network", ip: "172.16.80.2"
     config.vm.synced_folder "#{current_dir}" , "/vagrant"
     config.vm.provision "install",   type: "shell", path: "ldap/install.sh"
 #    config.vm.provision "debug",     type: "shell", path: "ldap/debug.sh"
+    config.vm.provider :virtualbox do |vb|
+       vb.customize ["modifyvm", :id, "--memory", "512"]
+    end
  end
 
 
@@ -51,6 +48,11 @@ config.vm.define "sp" do |config|
     config.vm.provision "eds",           type: "shell", path: "sp/eds.sh"
     config.vm.provision "sso",           type: "shell", path: "sp/sso.sh",      args: "#{ENV['SSO']}"
     config.vm.provision "metadata-idp", type: "shell", path: "sp/metadata.sh", args: "+ idp https://idp.example.com/idp/shibboleth"
+    # specifics for this box are:
+    config.vm.provider :virtualbox do |vb|
+       vb.customize ["modifyvm", :id, "--memory", "512"]
+    end
+
   end
 
 config.vm.define "idp" do |config|
@@ -59,7 +61,10 @@ config.vm.define "idp" do |config|
       config.vm.synced_folder "#{fqinstallerpath}" , "/installer"
       config.vm.provision "install",   type: "shell", path: "idp/provision.sh"
       config.vm.provision "metadata", type: "shell", path: "idp/metadata.sh"
-      vb.memory = 2200 
+      # specifics for this box are:
+      config.vm.provider :virtualbox do |vb|
+         vb.customize ["modifyvm", :id, "--memory", "2200"]
+      end
    end
 
 
