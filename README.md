@@ -32,7 +32,7 @@ Once machines are provisioned you can tweak things by ssh'ing into them (vagrant
 
 Common to Mac and Linux:
 
-1. Install Vagrant: https://www.vagrantup.com/downloads.html
+1. Install Vagrant (min ver 1.8.1): https://www.vagrantup.com/downloads.html
 1. Install VirtualBox: https://www.virtualbox.org/
 1. Install Git client: https://desktop.github.com/
 
