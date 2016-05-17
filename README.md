@@ -117,7 +117,8 @@ Visit the SP and sign into the services successfully
 ## FAQ / Tips and Tricks
 
 ### Common commands - halt, suspend, resume
-typical vagrant commands of halt and suspend work fine but when you start the vm again you need to specify the '--no-provision' statement to avoid reprovisioning the VM again when it resumes.
+typical vagrant commands of halt and suspend work fine:
+
 e.g.
 stop all containers:
 ```
