@@ -65,6 +65,7 @@ config.vm.define "idp" do |config|
       config.vm.provider :virtualbox do |vb|
          vb.customize ["modifyvm", :id, "--memory", "2200"]
       end
+
    end
 
 

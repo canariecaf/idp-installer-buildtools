@@ -2,6 +2,10 @@
 
 Using the latest [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional self contained Shibboleth IdP connecting to it's own local LDAP server and also installs a test SP.
 
+
+![VM architecture diagram](./sp/topology.png)
+
+
 Installation consists of:
 - A local private network 172.16.80.0/24 for our hosts
 - Automatic updates to your /etc/hosts for:
@@ -113,5 +117,26 @@ https://sp.example.com/
 ```
 ### Verifying LDAP
 Visit the SP and sign into the services successfully
+
+## FAQ / Tips and Tricks
+
+### Common commands - halt, suspend, resume
+typical vagrant commands of halt and suspend work fine:
+
+e.g.
+stop all containers:
+```
+vagrant suspend
+```
+stop a given container (our example is the idp, but can be sp, or ldap):
+```
+vagrant suspend idp
+```
+resume a given container :exclamation: you need to use --no-provision otherwise the container will try to provision again
+
+```
+vagrant resume idp --no-provision
+```
+
 
 
