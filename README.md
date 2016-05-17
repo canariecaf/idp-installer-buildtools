@@ -114,4 +114,24 @@ https://sp.example.com/
 ### Verifying LDAP
 Visit the SP and sign into the services successfully
 
+## FAQ / Tips and Tricks
+
+### Common commands - halt, suspend, resume
+typical vagrant commands of halt and suspend work fine but when you start the vm again you need to specify the '--no-provision' statement to avoid reprovisioning the VM again when it resumes.
+e.g.
+stop all containers:
+```
+vagrant suspend
+```
+stop a given container (our example is the idp, but can be sp, or ldap):
+```
+vagrant suspend idp
+```
+resume a given container :exclamation: you need to use --no-provision otherwise the container will try to provision again
+
+```
+vagrant resume idp --no-provision
+```
+
+
 
