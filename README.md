@@ -2,6 +2,11 @@
 
 Using the latest [IdP-Installer](https://github.com/canariecaf/idp-installer-CAF/tree/3.0.0-CAF-RC6) this build tool allows you to rapidly deploy a fully functional self contained Shibboleth IdP connecting to it's own local LDAP server and also installs a test SP.
 
+
+## VM Architecture
+![VM architecture diagram](./sp/topology.png)
+
+
 Installation consists of:
 - A local private network 172.16.80.0/24 for our hosts
 - Automatic updates to your /etc/hosts for:
