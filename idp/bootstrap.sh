@@ -9,7 +9,7 @@ mkdir -p work
 cd work
 GITOWNER="canariecaf"
 GITREPO="idp-installer-CAF"
-GITBRANCH="3.0.0-CAF-RC6"
+GITBRANCH="3.0.0-CAF"
 GITROOT="https://github.com/${GITOWNER}/${GITREPO}"
 
 CFGTEMPLATE="${r}/config.template"
