@@ -1,0 +1,13 @@
+<html>
+<body bgcolor=white>
+<center>
+<br>
+<br>
+<br>
+<img width="30%" src="/topology.png">
+<br>
+<br>
+<a href="/cgi-bin/test.py">Sign on to test IdP</a> | <a href="/Shibboleth.sso/Session">See Session State at SP</a>
+
+</body>
+</html>
