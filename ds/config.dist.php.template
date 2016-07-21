@@ -27,7 +27,7 @@ $commonDomain = '.example.com';
 // Optionnal cookie name prefix in case you run several 
 // instances of the WAYF in the same domain. 
 // Example: $cookieNamePrefix = '_mywayf';
-//$cookieNamePrefix = '';
+$cookieNamePrefix = '_cafwayf';
 
 // Names of the cookies where to store the settings to temporarily
 // redirect users transparently to their last selected IdP
@@ -95,7 +95,7 @@ $useSAML2Metadata = true;
   // be displayed in the drop down list. This is required if you need to add 
   // local exceptions over the federation metadata
   // Requires $useSAML2Metadata to be true
-  //$includeLocalConfEntries = true;
+  $includeLocalConfEntries = true;
 
   // Whether the return parameter is checked against SAML2 metadata or not
   // The Discovery Service specification says the DS SHOULD check this in order
@@ -189,27 +189,27 @@ $useLogging = true;
 // Set both config files to the same value if you don't want to use the 
 // the WAYF to read a (potential) automatically generated file that undergoes
 // some plausability checks before being used
-//$IDPConfigFile = 'IDProvider.conf.php';
-//$backupIDPConfigFile = 'IDProvider.conf.php';
+$IDPConfigFile = 'IDProvider.conf.php';
+$backupIDPConfigFile = 'IDProvider.conf.php';
 
 // Use $metadataFile as source federation's metadata.
-//$metadataFile = '/etc/shibboleth/metadata.myFederation.xml';
+$metadataFile = '/etc/shibboleth/metadata.myFederation.xml';
 
 // File to store the parsed IdP list
 // Will be updated automatically if the metadataFile modification time
 // is more recent than this file's
 // The user running the script must have permission to create $metadataIdpFile
-//$metadataIDPFile = 'IDProvider.metadata.php';
+$metadataIDPFile = 'IDProvider.metadata.php';
 
 // File to store the parsed SP list.
 // Will be updated automatically if the metadataFile modification time
 // is more recent than this file's
 // The user running the script must have permission to create $metadataIdpFile
-//$metadataSPFile = 'SProvider.metadata.php';
+$metadataSPFile = 'SProvider.metadata.php';
 
 // File to use as the lock file for writing the parsed IdP and SP lists.
 // The user running the script must have permission to write $metadataLockFile
-//$metadataLockFile = '/tmp/wayf_metadata.lock';
+$metadataLockFile = '/tmp/wayf_metadata.lock';
 
 // Use an absolute URL in case you want to use the embedded WAYF
 // The default assumes that this is in the same directory like
@@ -235,7 +235,7 @@ $useLogging = true;
 // This is mainly used for logging to syslog and in particular
 // useful in case multiple instances of the SWITCHwayf are
 // operated on the same host
-//$instanceIdentifier = 'SWITCHwayf';
+//$instanceIdentifier = 'CAFwayf';
 
 // Name of the federation [deprecated]
 // This value is not used anymore in the standard code. 
@@ -257,7 +257,7 @@ $useLogging = true;
 //$smallLogoURL = 'http://ds.example.org/SWITCHwayf/images/small-federation-logo.png';
 
 // Support contact email address
-//$supportContactEmail = 'helpdesk@example.org';
+$supportContactEmail = 'tickets@example.com';
 
 // Absolute URL to the logo of the organization operating this Discovery Service
 // Set to an empty string to hide the logo

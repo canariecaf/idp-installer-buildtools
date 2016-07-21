@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -x
 set -e 
 set -u 
 
@@ -38,10 +38,10 @@ done
 
 if [ "${OPTIND}" = "1" ]; then
 		 	echo "Bootstrapping Centralized Discovery Service into ds/work directory of ${fullworkdir}"
-			mkdir -p ${fullworkdir}
-			cd ${fullworkdir}
-		 	echo "Cloning cds tools from Git from Branch ${GITBRANCH}"
-			git clone ${GITROOT} -b ${GITBRANCH}
+			# mkdir -p ${fullworkdir}
+			# cd ${fullworkdir}
+		 # 	echo "Cloning cds tools from Git from Branch ${GITBRANCH}"
+			# git clone ${GITROOT} -b ${GITBRANCH}
 fi
 
 echo "Done Bootstrapping"
