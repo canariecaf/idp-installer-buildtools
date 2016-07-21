@@ -106,3 +106,7 @@ cp ${r}/${ds_config_idp_ref} ${full_ds_deploy_path}/${ds_config_idp_dest}
 echo -e "changing the WAYF file to CAF.ds for back compatibility"
 mv ${full_ds_deploy_path}/WAYF ${full_ds_deploy_path}/${ds_deploy_file}
 
+echo -e "Fetching Production CAF aggregate"
+curl  https://caf-shib2ops.ca/CoreServices/caf_metadata_signed_sha256.xml -o /etc/shibboleth/metadata.myFederation.xml
+
+

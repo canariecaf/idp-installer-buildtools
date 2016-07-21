@@ -40,6 +40,14 @@ echo "Bringing up the IdP"
 	echo "${PROVMSG}"
 	vagrant provision idp --provision-with base,install
 
+echo "Bringing up ds.example.com"
+	SSO="eds"
+	vagrant up ds  --no-provision
+	echo "${PROVMSG}"
+	vagrant provision ds --provision-with base,install,config
+	SSO=${SSO} vagrant provision sp --provision-with sso
+
+
 
 echo "Establishing trust for the SP to trust the IdP"
 	vagrant provision sp --provision-with metadata-idp

@@ -55,7 +55,20 @@ config.vm.define "sp" do |config|
 
   end
 
-  config.vm.define "ds" do |config|
+config.vm.define "idp" do |config|
+      config.vm.hostname = "idp.example.com"
+      config.vm.network "private_network", ip: "172.16.80.4"
+      config.vm.synced_folder "#{fqinstallerpath}" , "/installer"
+      config.vm.provision "install",   type: "shell", path: "idp/provision.sh"
+      config.vm.provision "metadata", type: "shell", path: "idp/metadata.sh"
+      # specifics for this box are:
+      config.vm.provider :virtualbox do |vb|
+         vb.customize ["modifyvm", :id, "--memory", "2200"]
+      end
+
+   end
+
+config.vm.define "ds" do |config|
     config.vm.hostname = "ds.example.com"
     config.vm.network "private_network", ip: "172.16.80.5"
     config.vm.synced_folder "#{current_dir}" , "/vagrant"
@@ -72,21 +85,6 @@ config.vm.define "sp" do |config|
     end
 
   end
-
-config.vm.define "idp" do |config|
-      config.vm.hostname = "idp.example.com"
-      config.vm.network "private_network", ip: "172.16.80.4"
-      config.vm.synced_folder "#{fqinstallerpath}" , "/installer"
-      config.vm.provision "install",   type: "shell", path: "idp/provision.sh"
-      config.vm.provision "metadata", type: "shell", path: "idp/metadata.sh"
-      # specifics for this box are:
-      config.vm.provider :virtualbox do |vb|
-         vb.customize ["modifyvm", :id, "--memory", "2200"]
-      end
-
-   end
-
-
 
 
 end
